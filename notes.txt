@@ -1,0 +1,10 @@
+Classes:
+1. Movies
+    -Description
+    -Ratings
+2. Shows
+    -Description
+    -Ratings
+3. Category
+4. Playlist
+5. Viewer
