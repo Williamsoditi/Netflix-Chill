@@ -9,14 +9,17 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os, django_heroku, dj_database_url
+from decouple import config,Csv
 from pathlib import Path
 import os, cloudinary, cloudinary.uploader, cloudinary.api, django_heroku, dj_database_url
 from decouple import config,Csv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -88,6 +91,7 @@ WSGI_APPLICATION = 'netflix.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -123,6 +127,18 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'netflix',
+#         'USER': 'moringa',
+#         'PASSWORD': 'Access',
+#     }
+# }
+# >>>>>>> 4df43a751e0a877648aa6ebf750757f71f3c668f
+
+
 
 
 # Password validation
