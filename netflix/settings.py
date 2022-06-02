@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'bootstrap3',
-    'movies.apps.MoviesConfig',
+    #'movies.apps.MoviesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,7 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
-    #'netflix',
+    'movies',
+
+    #Third party apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 #Setting up cloudinary
@@ -194,3 +199,5 @@ django_heroku.settings(locals())
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'movies.CustomUser'

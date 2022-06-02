@@ -8,13 +8,13 @@ AGE_CHOICES=(
     ('Kids','Kids')
 )
 MOVIE_CHOICES = (
-    ('seasonal','seasonal')
+    ('seasonal','seasonal'),
     ('single','single')
 )
 
 # Create your models here.
 class CustomUser(AbstractUser):
-    profiles = models.ManyToManyField('Profile', null=True, blank=True)
+    profiles = models.ManyToManyField('Profile', blank=True)
 
 class Profile(models.Model):
     name = models.CharField(max_length=225)
@@ -31,6 +31,6 @@ class Movie(models.Model):
     flyer = CloudinaryField('flyer')
     age_limit = models.CharField(max_length=10,choices=AGE_CHOICES)
 
-class Video(models.model):
+class Video(models.Model):
     title = models.CharField(max_length=225, blank=True, null=True)
     file = CloudinaryField('movies')
