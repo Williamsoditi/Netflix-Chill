@@ -67,13 +67,13 @@ class Watch(View):
             
 
             if profile not in request.user.profiles.all():
-                return redirect(to='core:profile_list')
+                return redirect(to='movies:profile_list')
             return render(request,'movieList.html',{
             'movies':movies,
             'show_case':showcase
             })
         except Profile.DoesNotExist:
-            return redirect(to='core:profile_list')
+            return redirect(to='movies:profile_list')
 
 
 @method_decorator(login_required,name='dispatch')
@@ -87,7 +87,7 @@ class ShowMovieDetail(View):
                 'movie':movie
             })
         except Movie.DoesNotExist:
-            return redirect('core:profile_list')
+            return redirect('movies:profile_list')
 
 @method_decorator(login_required,name='dispatch')
 class ShowMovie(View):
@@ -103,4 +103,4 @@ class ShowMovie(View):
                 'movie':list(movie)
             })
         except Movie.DoesNotExist:
-            return redirect('core:profile_list')
+            return redirect('movies:profile_list')
