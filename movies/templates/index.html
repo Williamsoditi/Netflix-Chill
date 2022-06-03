@@ -1,8 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
     {% block content %}
 
-    <h1 class="text-center">Welcome</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa optio maiores distinctio vitae, ratione consectetur enim dicta, laudantium numquam totam suscipit, dolores eaque voluptatum nam nihil animi vel reprehenderit quo!</p>
+    <div class="container-fluid text-center opening">
+        <div class="dummy" style="height: 5vw;">
+            
+        </div>
+        <div class="welcome">
+            <h1 class="header"><strong>Unlimited movies, TV<br>shows, and more.</strong></h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <p>Ready to watch? Enter your email to create or restart your membership</p>
+        </div>
+        <div class="text-center email">
+            <input type="email" placeholder="Email address" required class="form-control">
+            <span><button class="btn btn-danger">Get Started</button></span>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid phones">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-sm-6 phones-text">
+                    <strong><h1 class="header">Have an Android<br>Phone? Get our new<br>free plan!</h1></strong>
+                    <h2>Watch a selection of new movies and TV<br>shows without adding any payment details!</h2>
+                    <p>Get the app ></p>
+                </div>
+                <div class="col-sm-6">
+                    <img src="{% static 'Images/phones.jpg' %}" class="img-fluid phones-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid phones">
+        <h1 class="text-center header">Frequently Asked Questions</h1>
+
+    </div>
 
 
 
